@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaani — Demo Conversations</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Kannada:wght@400;600;700&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600;700&family=Noto+Sans+Bengali:wght@400;600;700&family=Noto+Sans+Gujarati:wght@400;600;700&family=Noto+Sans+Oriya:wght@400;600;700&family=Noto+Sans+Gurmukhi:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="contest-banner">
+    Built with Sarvam AI — Saarika + Translate + Bulbul V3 · #TheMicIsYours
+  </div>
+
+  <div class="demos-page">
+    <div class="demos-header">
+      <a href="index.html" class="back-btn">&larr;</a>
+      <h1 class="logo">वाणी</h1>
+    </div>
+
+    <div class="demos-title">
+      <h2>Sample Conversations</h2>
+      <p>Hear how Vaani bridges language gaps in real scenarios</p>
+    </div>
+
+    <div class="demos-cards">
+    <!-- Demo 1: Plumber Issue -->
+    <div class="demo-card">
+      <div class="demo-card-header">
+        <span class="demo-card-title">Plumber Issue</span>
+        <span class="demo-card-langs">ଓଡ଼ିଆ &#8596; ಕನ್ನಡ</span>
+      </div>
+
+      <div class="demo-turn demo-turn-a">
+        <div class="demo-turn-speaker">Worker (ଓଡ଼ିଆ)</div>
+        <div class="demo-turn-original">"ସାର୍, ବାଥରୁମ୍ ପାଇପ୍ ଲିକ୍ ହେଉଛି। ଆଜି ଠିକ୍ କଲେ ଭଲ।"</div>
+        <button class="demo-play-btn" data-audio="audio/demo1_turn1.wav">
+          &#9654; Employer hears (ಕನ್ನಡ)
+        </button>
+      </div>
+
+      <div class="demo-turn demo-turn-b">
+        <div class="demo-turn-speaker">Employer (ಕನ್ನಡ)</div>
+        <div class="demo-turn-original">"ಸರಿ, ಪ್ಲಂಬರ್ ಕರೀತೀನಿ. ಸಂಜೆ ಬರ್ತಾನೆ."</div>
+        <button class="demo-play-btn" data-audio="audio/demo1_turn2.wav">
+          &#9654; Worker hears (ଓଡ଼ିଆ)
+        </button>
+      </div>
+    </div>
+
+    <!-- Demo 2: Doctor Visit -->
+    <div class="demo-card">
+      <div class="demo-card-header">
+        <span class="demo-card-title">Doctor Visit</span>
+        <span class="demo-card-langs">বাংলা &#8596; தமிழ்</span>
+      </div>
+
+      <div class="demo-turn demo-turn-a">
+        <div class="demo-turn-speaker">Patient (বাংলা)</div>
+        <div class="demo-turn-original">"ডাক্তারবাবু, আমার পেটে খুব ব্যথা। তিন দিন হলো।"</div>
+        <button class="demo-play-btn" data-audio="audio/demo2_turn1.wav">
+          &#9654; Doctor hears (தமிழ்)
+        </button>
+      </div>
+
+      <div class="demo-turn demo-turn-b">
+        <div class="demo-turn-speaker">Doctor (தமிழ்)</div>
+        <div class="demo-turn-original">"சாப்பாடு சரியா சாப்பிடுறீங்களா? தண்ணீர் நிறைய குடிங்க. நாளைக்கு வாங்க."</div>
+        <button class="demo-play-btn" data-audio="audio/demo2_turn2.wav">
+          &#9654; Patient hears (বাংলা)
+        </button>
+      </div>
+    </div>
+
+    <!-- Demo 3: Wage Negotiation -->
+    <div class="demo-card">
+      <div class="demo-card-header">
+        <span class="demo-card-title">Wage Negotiation</span>
+        <span class="demo-card-langs">हिन्दी &#8596; മലയാളം</span>
+      </div>
+
+      <div class="demo-turn demo-turn-a">
+        <div class="demo-turn-speaker">Worker (हिन्दी)</div>
+        <div class="demo-turn-original">"भाई, आज का मज़दूरी कितना है? कल ₹600 बोले थे।"</div>
+        <button class="demo-play-btn" data-audio="audio/demo3_turn1.wav">
+          &#9654; Employer hears (മലയാളം)
+        </button>
+      </div>
+
+      <div class="demo-turn demo-turn-b">
+        <div class="demo-turn-speaker">Employer (മലയാളം)</div>
+        <div class="demo-turn-original">"ഇന്ന് ₹650 തരാം. ഓവർടൈം ഉണ്ടെങ്കിൽ ₹800."</div>
+        <button class="demo-play-btn" data-audio="audio/demo3_turn2.wav">
+          &#9654; Worker hears (हिन्दी)
+        </button>
+      </div>
+    </div>
+    </div>
+
+    <div class="try-cta">
+      <a href="index.html" class="try-cta-btn">Try it yourself</a>
+    </div>
+  </div>
+
+  <script src="js/demos.js"></script>
+</body>
+</html>

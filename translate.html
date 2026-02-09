@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaani — Translate</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Kannada:wght@400;600;700&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600;700&family=Noto+Sans+Bengali:wght@400;600;700&family=Noto+Sans+Gujarati:wght@400;600;700&family=Noto+Sans+Oriya:wght@400;600;700&family=Noto+Sans+Gurmukhi:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="contest-banner">
+    Built with Sarvam AI — Saarika + Translate + Bulbul V3 · #TheMicIsYours
+  </div>
+
+  <div class="translate-page">
+    <div class="translate-header">
+      <a href="index.html" class="back-btn">&larr;</a>
+      <h1 class="logo">वाणी</h1>
+    </div>
+
+    <div class="lang-pair-bar">
+      <span id="from-lang-name"></span>
+      <span class="swap-arrow">&#8596;</span>
+      <span id="to-lang-name"></span>
+    </div>
+
+    <div class="conversation-area" id="conversation">
+      <div class="status-message" id="welcome-msg">
+        Tap a button below to start speaking
+      </div>
+    </div>
+
+    <div class="mic-controls">
+      <button class="mic-btn mic-btn-a" id="mic-a">
+        <span class="mic-icon">&#127908;</span>
+        <span class="mic-label" id="mic-a-label"></span>
+      </button>
+      <button class="mic-btn mic-btn-b" id="mic-b">
+        <span class="mic-icon">&#127908;</span>
+        <span class="mic-label" id="mic-b-label"></span>
+      </button>
+    </div>
+  </div>
+
+  <script src="js/translate.js"></script>
+</body>
+</html>

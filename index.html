@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="hi">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Vaani — Speak. Be Understood.</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans:wght@400;600;700&family=Noto+Sans+Devanagari:wght@400;600;700&family=Noto+Sans+Kannada:wght@400;600;700&family=Noto+Sans+Tamil:wght@400;600;700&family=Noto+Sans+Telugu:wght@400;600;700&family=Noto+Sans+Malayalam:wght@400;600;700&family=Noto+Sans+Bengali:wght@400;600;700&family=Noto+Sans+Gujarati:wght@400;600;700&family=Noto+Sans+Oriya:wght@400;600;700&family=Noto+Sans+Gurmukhi:wght@400;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+  <div class="contest-banner">
+    Built with Sarvam AI — Saarika + Translate + Bulbul V3 · #TheMicIsYours
+  </div>
+
+  <main class="landing">
+    <header class="landing-header">
+      <h1 class="logo">वाणी <span class="logo-divider">|</span> Vaani</h1>
+      <p class="tagline">Speak. Be Understood.</p>
+    </header>
+
+    <div class="landing-body">
+      <!-- Left: Hero content -->
+      <section class="hero">
+        <div class="hero-hindi">
+          <div class="hero-lang-label" id="hero-lang-label">Hindi</div>
+          <div class="hero-rotating" id="hero-rotating">
+            <p class="hero-headline" id="hero-headline">बोलो. समझो. समझाओ.</p>
+            <p id="hero-line1">आपकी भाषा अलग है, उनकी भाषा अलग है. लेकिन कहना दोनों को एक ही बात है.</p>
+            <p id="hero-line2">Vaani — आप बोलो अपनी भाषा में. सामने वाला सुनेगा अपनी भाषा में.</p>
+            <p id="hero-line3">कोई टाइपिंग नहीं. कोई अंग्रेज़ी नहीं. बस बोलो.</p>
+          </div>
+        </div>
+        <div class="hero-english">
+          <p>India has 100 million migrant workers who can't speak the local language. Vaani is a two-way voice translator. Speak in yours. They hear in theirs.</p>
+          <p>Powered by Sarvam AI: Saarika STT + Translate + Bulbul V3 TTS.</p>
+        </div>
+      </section>
+
+      <!-- Right: Language selector + CTA -->
+      <section class="language-selector">
+        <h2 class="selector-title">Choose your languages</h2>
+        <div class="selector-row">
+          <div class="selector-group">
+            <label for="from-lang">I speak</label>
+            <select id="from-lang">
+              <option value="hi-IN">हिन्दी</option>
+              <option value="kn-IN">ಕನ್ನಡ</option>
+              <option value="ta-IN">தமிழ்</option>
+              <option value="te-IN">తెలుగు</option>
+              <option value="ml-IN">മലയാളം</option>
+              <option value="bn-IN">বাংলা</option>
+              <option value="mr-IN">मराठी</option>
+              <option value="gu-IN">ગુજરાતી</option>
+              <option value="od-IN">ଓଡ଼ିଆ</option>
+              <option value="pa-IN">ਪੰਜਾਬੀ</option>
+            </select>
+          </div>
+          <div class="swap-icon" id="swap-btn" title="Swap languages">&#8596;</div>
+          <div class="selector-group">
+            <label for="to-lang">They speak</label>
+            <select id="to-lang">
+              <option value="hi-IN">हिन्दी</option>
+              <option value="kn-IN" selected>ಕನ್ನಡ</option>
+              <option value="ta-IN">தமிழ்</option>
+              <option value="te-IN">తెలుగు</option>
+              <option value="ml-IN">മലയാളം</option>
+              <option value="bn-IN">বাংলা</option>
+              <option value="mr-IN">मराठी</option>
+              <option value="gu-IN">ગુજરાતી</option>
+              <option value="od-IN">ଓଡ଼ିଆ</option>
+              <option value="pa-IN">ਪੰਜਾਬੀ</option>
+            </select>
+          </div>
+        </div>
+        <button class="start-btn" id="start-btn">Start Talking</button>
+        <a href="demos.html" class="demo-link">Listen to sample conversations first</a>
+      </section>
+    </div>
+
+    <footer class="landing-footer">
+      <p>Built with Sarvam AI Bulbul V3 · #TheMicIsYours · 10 languages. 90 pairs. One voice of understanding.</p>
+    </footer>
+  </main>
+
+  <script>
+    const fromLang = document.getElementById('from-lang');
+    const toLang = document.getElementById('to-lang');
+    const swapBtn = document.getElementById('swap-btn');
+    const startBtn = document.getElementById('start-btn');
+
+    swapBtn.addEventListener('click', () => {
+      const temp = fromLang.value;
+      fromLang.value = toLang.value;
+      toLang.value = temp;
+    });
+
+    startBtn.addEventListener('click', () => {
+      if (fromLang.value === toLang.value) {
+        alert('Please select two different languages.');
+        return;
+      }
+      window.location.href = `translate.html?from=${fromLang.value}&to=${toLang.value}`;
+    });
+
+    // Rotating hero text across all 10 languages
+    const heroTexts = [
+      {
+        lang: 'Hindi',
+        headline: 'बोलो. समझो. समझाओ.',
+        line1: 'आपकी भाषा अलग है, उनकी भाषा अलग है. लेकिन कहना दोनों को एक ही बात है.',
+        line2: 'Vaani — आप बोलो अपनी भाषा में. सामने वाला सुनेगा अपनी भाषा में.',
+        line3: 'कोई टाइपिंग नहीं. कोई अंग्रेज़ी नहीं. बस बोलो.'
+      },
+      {
+        lang: 'Kannada',
+        headline: 'ಮಾತಾಡಿ. ಅರ್ಥಮಾಡಿ. ಅರ್ಥಮಾಡಿಸಿ.',
+        line1: 'ನಿಮ್ಮ ಭಾಷೆ ಬೇರೆ, ಅವರ ಭಾಷೆ ಬೇರೆ. ಆದರೆ ಹೇಳುವುದು ಒಂದೇ ಮಾತು.',
+        line2: 'Vaani — ನೀವು ನಿಮ್ಮ ಭಾಷೆಯಲ್ಲಿ ಮಾತಾಡಿ. ಅವರು ಅವರ ಭಾಷೆಯಲ್ಲಿ ಕೇಳುತ್ತಾರೆ.',
+        line3: 'ಟೈಪಿಂಗ್ ಇಲ್ಲ. ಇಂಗ್ಲಿಷ್ ಇಲ್ಲ. ಬರೀ ಮಾತಾಡಿ.'
+      },
+      {
+        lang: 'Tamil',
+        headline: 'பேசு. புரிந்துகொ. புரியவை.',
+        line1: 'உங்கள் மொழி வேறு, அவர்கள் மொழி வேறு. ஆனால் சொல்வது ஒன்றே.',
+        line2: 'Vaani — நீங்கள் உங்கள் மொழியில் பேசுங்கள். அவர்கள் அவர்கள் மொழியில் கேட்பார்கள்.',
+        line3: 'டைப்பிங் இல்லை. ஆங்கிலம் இல்லை. பேசுங்கள்.'
+      },
+      {
+        lang: 'Telugu',
+        headline: 'మాట్లాడు. అర్థం చేసుకో. అర్థం చేయించు.',
+        line1: 'మీ భాష వేరు, వారి భాష వేరు. కానీ చెప్పేది ఒక్కటే.',
+        line2: 'Vaani — మీరు మీ భాషలో మాట్లాడండి. వారు వారి భాషలో వింటారు.',
+        line3: 'టైపింగ్ లేదు. ఇంగ్లీష్ లేదు. మాట్లాడండి.'
+      },
+      {
+        lang: 'Malayalam',
+        headline: 'സംസാരിക്കൂ. മനസ്സിലാക്കൂ. മനസ്സിലാക്കിക്കൊടുക്കൂ.',
+        line1: 'നിങ്ങളുടെ ഭാഷ വേറെ, അവരുടെ ഭാഷ വേറെ. പക്ഷേ പറയുന്നത് ഒന്നുതന്നെ.',
+        line2: 'Vaani — നിങ്ങളുടെ ഭാഷയിൽ സംസാരിക്കൂ. അവർ അവരുടെ ഭാഷയിൽ കേൾക്കും.',
+        line3: 'ടൈപ്പിംഗ് വേണ്ട. ഇംഗ്ലീഷ് വേണ്ട. സംസാരിക്കൂ.'
+      },
+      {
+        lang: 'Bengali',
+        headline: 'বলো. বোঝো. বোঝাও.',
+        line1: 'তোমার ভাষা আলাদা, তাদের ভাষা আলাদা। কিন্তু বলতে চাওয়া একই কথা।',
+        line2: 'Vaani — তুমি তোমার ভাষায় বলো। ওরা ওদের ভাষায় শুনবে।',
+        line3: 'টাইপিং নেই। ইংরেজি নেই। শুধু বলো।'
+      },
+      {
+        lang: 'Marathi',
+        headline: 'बोला. समजा. समजावा.',
+        line1: 'तुमची भाषा वेगळी, त्यांची भाषा वेगळी. पण सांगायचं दोघांना एकच.',
+        line2: 'Vaani — तुम्ही तुमच्या भाषेत बोला. समोरचा त्याच्या भाषेत ऐकेल.',
+        line3: 'टायपिंग नाही. इंग्रजी नाही. फक्त बोला.'
+      },
+      {
+        lang: 'Gujarati',
+        headline: 'બોલો. સમજો. સમજાવો.',
+        line1: 'તમારી ભાષા જુદી, એમની ભાષા જુદી. પણ કહેવાનું બંનેને એક જ.',
+        line2: 'Vaani — તમે તમારી ભાષામાં બોલો. સામેવાળા એમની ભાષામાં સાંભળશે.',
+        line3: 'ટાઈપિંગ નહીં. અંગ્રેજી નહીં. બસ બોલો.'
+      },
+      {
+        lang: 'Odia',
+        headline: 'କୁହ. ବୁଝ. ବୁଝାଅ.',
+        line1: 'ତୁମ ଭାଷା ଅଲଗା, ସେମାନଙ୍କ ଭାଷା ଅଲଗା। କିନ୍ତୁ କହିବା କଥା ଗୋଟିଏ।',
+        line2: 'Vaani — ତୁମେ ତୁମ ଭାଷାରେ କୁହ। ସାମନା ଲୋକ ତା ଭାଷାରେ ଶୁଣିବ।',
+        line3: 'ଟାଇପିଂ ନାହିଁ। ଇଂରାଜୀ ନାହିଁ। ବସ୍ କୁହ।'
+      },
+      {
+        lang: 'Punjabi',
+        headline: 'ਬੋਲੋ. ਸਮਝੋ. ਸਮਝਾਓ.',
+        line1: 'ਤੁਹਾਡੀ ਭਾਸ਼ਾ ਵੱਖ, ਉਨ੍ਹਾਂ ਦੀ ਭਾਸ਼ਾ ਵੱਖ। ਪਰ ਕਹਿਣਾ ਦੋਵਾਂ ਨੂੰ ਇੱਕੋ ਗੱਲ।',
+        line2: 'Vaani — ਤੁਸੀਂ ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ ਬੋਲੋ। ਸਾਹਮਣੇ ਵਾਲਾ ਆਪਣੀ ਭਾਸ਼ਾ ਵਿੱਚ ਸੁਣੇਗਾ।',
+        line3: 'ਕੋਈ ਟਾਈਪਿੰਗ ਨਹੀਂ। ਕੋਈ ਅੰਗਰੇਜ਼ੀ ਨਹੀਂ। ਬੱਸ ਬੋਲੋ।'
+      }
+    ];
+
+    let currentLang = 0;
+    const heroRotating = document.getElementById('hero-rotating');
+    const heroLangLabel = document.getElementById('hero-lang-label');
+    const heroHeadline = document.getElementById('hero-headline');
+    const heroLine1 = document.getElementById('hero-line1');
+    const heroLine2 = document.getElementById('hero-line2');
+    const heroLine3 = document.getElementById('hero-line3');
+
+    setInterval(() => {
+      heroRotating.classList.add('hero-fade-out');
+      heroLangLabel.classList.add('hero-fade-out');
+
+      setTimeout(() => {
+        currentLang = (currentLang + 1) % heroTexts.length;
+        const t = heroTexts[currentLang];
+        heroLangLabel.textContent = t.lang;
+        heroHeadline.textContent = t.headline;
+        heroLine1.textContent = t.line1;
+        heroLine2.textContent = t.line2;
+        heroLine3.textContent = t.line3;
+
+        heroRotating.classList.remove('hero-fade-out');
+        heroLangLabel.classList.remove('hero-fade-out');
+      }, 400);
+    }, 3500);
+  </script>
+</body>
+</html>
